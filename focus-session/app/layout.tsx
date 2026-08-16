@@ -92,7 +92,7 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://focus-session-kappa.vercel.app'),
+  metadataBase: new URL('https://focus-session-woad.vercel.app'),
   title: {
     default: 'Focus Session — Stop scrolling. Start watching with purpose.',
     template: '%s — Focus Session',
