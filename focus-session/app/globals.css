@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-ink;
+  }
+
+  /* Strong, visible focus states everywhere — accessibility floor. */
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible,
+  input:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px #f4f6f5, 0 0 0 6px #0f766e;
+    border-radius: 0.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-white font-semibold shadow-soft transition-colors hover:bg-primary-dark;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-line bg-white px-6 py-3 text-ink font-semibold transition-colors hover:border-primary hover:text-primary;
+  }
+
+  .card {
+    @apply bg-card rounded-xl2 border border-line shadow-soft;
+  }
+}
+
+/* Signature element: a segmented "session ring" used on the homepage hero
+   and session-progress UI — a literal stopwatch/timer motif that ties the
+   whole product back to "how much time do you have?". */
+.session-ring {
+  --ring-size: 220px;
+  width: var(--ring-size);
+  height: var(--ring-size);
+  border-radius: 9999px;
+  position: relative;
+}
